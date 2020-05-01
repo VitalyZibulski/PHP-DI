@@ -2,9 +2,12 @@
 
 namespace App\Controllers\Auth;
 
-class LoginController {
+use App\Controllers\MainContoller;
+
+class LoginController extends MainContoller {
+
     public function showForm()
     {
-
+        echo $this->view->render('auth/login');
     }
 }
