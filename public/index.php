@@ -1,3 +1,7 @@
 <?php
 
-echo 1111;
+require '../vendor/autoload.php';
+/**
+ * add routes
+ */
+require '../app/routes.php';

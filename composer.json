@@ -6,7 +6,8 @@
     "league/plates": "3.*",
     "delight-im/auth": "^7.2",
     "tamtamchik/simple-flash": "^1.2",
-    "respect/validation": "^1.1"
+    "respect/validation": "^1.1",
+    "larapack/dd": "^1.1"
   },
 
   "autoload": {
