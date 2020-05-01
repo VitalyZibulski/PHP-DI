@@ -3,7 +3,6 @@
 
 namespace App\Controllers\Auth;
 
-
 use App\Controllers\MainController;
 
 class VerifyController extends MainController
