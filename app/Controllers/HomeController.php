@@ -2,12 +2,27 @@
 
 namespace App\Controllers;
 
-class HomeController {
-    public function index(){
-        // Create new Plates instance
-        $templates = new \League\Plates\Engine('../app/Views');
+use League\Plates\Engine;
 
-        // Render a template
-        echo $templates->render('pages/index');
+class HomeController {
+    public $view;
+
+    //call Engine::class => function(){
+    //        return new Engine('../app/Views');
+    //    }
+    // __construct(Engine $engine)
+    public function __construct(Engine $engine)
+    {
+        $this->view = $engine;
+    }
+
+    public function index()
+    {
+        echo $this->view->render('pages/index');
+    }
+
+    public function showForm()
+    {
+        echo $this->view->render('auth/login');
     }
 }
