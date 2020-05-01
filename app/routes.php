@@ -18,6 +18,7 @@ $container = $builder->build();
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
 $r->get( '/', ['App\Controllers\HomeController', 'index']);
 $r->get( '/login', ['App\Controllers\Auth\LoginController', 'showForm']);
+$r->post( '/login', ['App\Controllers\Auth\LoginController', 'login']);
 $r->get( '/register', ['App\Controllers\Auth\RegisterController', 'showForm']);
 $r->post( '/register', ['App\Controllers\Auth\RegisterController', 'register']);
 $r->get( '/verify_email', ['App\Controllers\Auth\VerifyController', 'verify']);

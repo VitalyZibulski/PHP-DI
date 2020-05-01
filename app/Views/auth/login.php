@@ -15,13 +15,12 @@
 <div class="container main-content">
     <div class="columns">
         <div class="column"></div>
-        <form class="column is-quarter auth-form">
-            <?= flash(); ?>
-            <form action="/login" method="POST"></form>
+        <div class="column is-quarter auth-form">
+            <form action="/login" method="POST">
                 <div class="field">
                     <label class="label">Email</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="email" >  <!-- is-danger -->
+                        <input class="input" type="email" name="email" >  <!-- is-danger -->
                         <span class="icon is-small is-left">
                       <i class="fas fa-envelope"></i>
                     </span>
@@ -35,7 +34,7 @@
                 <div class="field">
                     <label class="label">Пароль</label>
                     <div class="control has-icons-left has-icons-right">
-                        <input class="input" type="password">
+                        <input class="input" type="password" name="password">
                         <span class="icon is-small is-left">
                       <i class="fas fa-lock"></i>
                     </span>
@@ -53,7 +52,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link">Войти</button>
+                        <button class="button is-link" type="submit">Войти</button>
                     </div>
                     <div class="control">
                         <a class="button is-text" href="index.html">Отмена</a>
