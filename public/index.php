@@ -1,7 +1,5 @@
 <?php
 
 require '../vendor/autoload.php';
-/**
- * add routes
- */
+require '../app/helpers.php';
 require '../app/routes.php';

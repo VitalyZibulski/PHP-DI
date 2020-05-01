@@ -1,11 +1,16 @@
 <?php
 
+use Delight\Auth\Auth;
 use League\Plates\Engine;
 
 $builder = new \DI\ContainerBuilder();
 $builder->addDefinitions([
     Engine::class => function(){
         return new Engine('../app/Views');
+    },
+    Auth::class => function(){
+        $db = new \PDO('mysql:host=localhost;dbname=blog-picture;', 'root', '');
+        return new Auth($db);
     }
 ]);
 $container = $builder->build();
@@ -13,6 +18,9 @@ $container = $builder->build();
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
 $r->get( '/', ['App\Controllers\HomeController', 'index']);
 $r->get( '/login', ['App\Controllers\Auth\LoginController', 'showForm']);
+$r->get( '/register', ['App\Controllers\Auth\RegisterController', 'showForm']);
+$r->post( '/register', ['App\Controllers\Auth\RegisterController', 'register']);
+$r->get( '/verify_email', ['App\Controllers\Auth\VerifyController', 'verify']);
 // {id} must be a number (\d+)
 $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 // The /{title} suffix is optional

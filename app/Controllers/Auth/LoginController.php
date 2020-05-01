@@ -2,9 +2,9 @@
 
 namespace App\Controllers\Auth;
 
-use App\Controllers\MainContoller;
+use App\Controllers\MainController;
 
-class LoginController extends MainContoller {
+class LoginController extends MainController {
 
     public function showForm()
     {
